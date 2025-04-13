@@ -25,16 +25,22 @@ export default function Pagination({ dispatch }) {
     return (
         <div className="p-4 flex justify-center">
             {portionNumber > 1 &&
-                <PaginationButton Icon={"GrPrevious"} click={() => setPortionNumber(portionNumber - 1)} />
+                <PaginationButton
+                    Children={"GrPrevious"}
+                    click={() => { setPortionNumber(portionNumber - 1); changePage(leftPortionSize - 10) }} /
+                >
             }
             {buttons.filter((p) => p >= leftPortionSize && p <= rightPortionSize).map((p) =>
                 <PaginationButton
-                    key={p} click={() => changePage(p)} Icon={p}
+                    key={p} click={() => changePage(p)} Children={p}
                     style={p === page && "bg-primary-bg text-white"}
                 />
             )}
             {endButton > portionNumber &&
-                <PaginationButton Icon={"GrNext"} click={() => setPortionNumber(portionNumber + 1)} />
+                <PaginationButton
+                    Children={"GrNext"}
+                    click={() => { setPortionNumber(portionNumber + 1); changePage(leftPortionSize + 10) }}
+                />
             }
         </div>
     )
