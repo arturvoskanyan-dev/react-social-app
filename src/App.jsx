@@ -1,19 +1,17 @@
-import { useDispatch, useSelector } from 'react-redux'
-import { useEffect } from 'react'
-import { getUsersThunk } from './store/action/usersAction';
+import { UsersPage } from './pages';
+import { Route, Routes } from 'react-router-dom';
+import Layout from './layout/layout';
 import './App.css'
 
 function App() {
-  const {users} = useSelector((state) => state.usersPage)
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(getUsersThunk())
-  }, [])
 
   return (
-    <section>
-      
+    <section className="w-7xl m-auto px-5">
+      <Routes>
+        <Route path='/' element={<Layout />}>
+          <Route path='/users' element={<UsersPage />} />
+        </Route>
+      </Routes>
     </section>
   )
 }
