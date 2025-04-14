@@ -1,0 +1,4 @@
+.active > .icon::after {
+    content: "";
+    @apply w-full h-1 block bg-primary-bg
+}

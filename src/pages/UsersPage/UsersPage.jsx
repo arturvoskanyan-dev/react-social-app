@@ -12,7 +12,7 @@ export default function UsersPage() {
     }, [page])
 
     return (
-        <section>
+        <section className="py-30">
             <Pagination dispatch={dispatch} />
             <div className="flex flex-wrap justify-between items-center gap-16 p-4">
                 {
