@@ -6,7 +6,7 @@ import {UserCard, Pagination} from "../index"
 export default function UsersPage() {
     const { users, page } = useSelector((state) => state.usersPage)
     const dispatch = useDispatch();
-
+    
     useEffect(() => {
         dispatch(getUsersThunk(page))
     }, [page])
@@ -17,7 +17,7 @@ export default function UsersPage() {
             <div className="flex flex-wrap justify-between items-center gap-16 p-4">
                 {
                     users?.map((user) => {
-                        return <UserCard key={user.id} user={user} />
+                        return <UserCard key={user.id} user={user}  />
                     })
                 }
             </div>

@@ -10,7 +10,7 @@ export const SocialAPI = {
         return instance.get(`/users?page=${page}&count=100`)
     },
 
-    getSearchUser(userId) {
+    getUser(userId) {
         return instance.get(`/profile/${userId}`)
     }
 }

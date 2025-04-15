@@ -1,18 +1,22 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux';
-import { searchUserThunk } from '../../store/action/searchAction';
+import { userThunk } from '../../store/action/userAction';
 import { GoSearch } from 'react-icons/go';
+import { useNavigate } from 'react-router-dom';
 
 export default function SearchUserID() {
     const [searchUserId, setSearchUserId] = useState("");
     const dispatch = useDispatch();
+    let navigate = useNavigate();
 
     const handleSubmit = () => {
-        dispatch(searchUserThunk(searchUserId))
+        navigate(`/user/${searchUserId}`)
+        dispatch(userThunk(searchUserId))
+        setSearchUserId("")
     }
 
     return (
-        <form className='relative flex items-center' onSubmit={(e) => { e.preventDefault(); handleSubmit() }}>
+        <form className='relative flex items-center' onSubmit={(e) => {e.preventDefault(); handleSubmit();}}>
             <input
                 type="number"
                 value={searchUserId}
@@ -21,7 +25,7 @@ export default function SearchUserID() {
                 placeholder="Search by user ID"
             />
             <GoSearch
-                onClick={handleSubmit}
+                onClick={() => handleSubmit()}
                 className='absolute right-2 text-xl text-gray-500 cursor-pointer'
             />
         </form>

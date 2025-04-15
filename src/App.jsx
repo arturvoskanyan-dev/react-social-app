@@ -1,4 +1,4 @@
-import { UsersPage } from './pages';
+import { UsersPage, UserProfile } from './pages';
 import { Route, Routes } from 'react-router-dom';
 import Layout from './layout/layout';
 import './App.css'
@@ -10,6 +10,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Layout />}>
           <Route path='/users' element={<UsersPage />} />
+          <Route path='/user/:id' element={<UserProfile />} />
         </Route>
       </Routes>
     </section>
