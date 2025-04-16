@@ -7,8 +7,9 @@ import { NavLink } from 'react-router-dom';
 export default function LoginPage() {
     const dispatch = useDispatch();
 
-    const login = ({ email, password }) => {
+    const login = ({ email, password }, resetForm) => {
         dispatch(setLoginThunk(email, password))
+        resetForm()
     }
 
     return (
@@ -24,7 +25,7 @@ export default function LoginPage() {
                             email: "",
                             password: ""
                         }}
-                        onSubmit={(value) => login(value)}
+                        onSubmit={(value, {resetForm}) => login(value, resetForm)}
                     >
                         <Form>
                             <div className='flex flex-wrap gap-4'>
@@ -41,10 +42,10 @@ export default function LoginPage() {
                                 />
                             </div>
                             <div className='m-4 flex flex-wrap justify-center gap-4'>
-                                <button className='btn btn w-primary-size bg-primary-blue'>Login</button>
+                                <button type='submit' className='btn w-primary-size bg-primary-blue'>Login</button>
                                 <NavLink to="/users">
                                     <button
-                                        className='btn btn bg-primary-green'
+                                        className='btn bg-primary-green'
                                     >log in without an account</button>
                                 </NavLink>
                             </div>

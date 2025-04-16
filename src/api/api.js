@@ -25,5 +25,9 @@ export const SocialAPI = {
         let formData = new FormData();
         formData.append("file", file)
         return instance.put("profile/photo", formData)
+    },
+
+    editProfile(url) {
+        return instance.put(`/profile`, url)
     }
 }

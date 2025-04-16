@@ -4,6 +4,7 @@ import { userThunk } from '../../store/action/userAction';
 import { useDispatch, useSelector } from 'react-redux';
 import userImage from "../../assets/user.png"
 import { SocialAPI } from '../../api/api';
+import ProfileAbout from '../../components/ProfileAbout/ProfileAbout';
 
 export default function UserProfile() {
     let { id } = useParams();
@@ -36,6 +37,7 @@ export default function UserProfile() {
                     }
                 </div>
             </div>
+            {localStorage.getItem("userId") === id && <ProfileAbout user={user} />}
         </section>
     )
 }
