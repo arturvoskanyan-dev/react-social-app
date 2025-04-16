@@ -12,5 +12,9 @@ export const SocialAPI = {
 
     getUser(userId) {
         return instance.get(`/profile/${userId}`)
+    },
+
+    setLogin(email, password) {
+        return instance.post(`/auth/login`, {email, password})
     }
 }

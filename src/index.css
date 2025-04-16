@@ -2,5 +2,20 @@
 @import "./styles/main.css";
 
 @theme {
+    /* Typography */
+    --text-logo-size: 54px;
+    --text-info-size: 28px;
+    
+    /* Sizing */
+    --width-primary-size: 364px;
+    --width-form-size: 400px;
+    
+    /* Colors */
     --color-primary-bg: #0866ff;
+    --color-primary-blue: #0866ff;
+    --color-primary-green: #42b72a;
+  
+    /* Borders */
+    --border-primary: #ccd0d5;
+    --rounded-primary: 6px;
 }

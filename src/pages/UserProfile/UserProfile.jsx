@@ -19,11 +19,11 @@ export default function UserProfile() {
                 <img src={user?.photos?.large || userImage} className="rounded-full" />
                 <h2 className='text-xl font-bold'>{user?.fullName}</h2>
             </div>
-            <div>
+            {/* <div>
                 <button className='bg-primary-bg w-[200px] p-2 text-white font-medium rounded-xl cursor-pointer hover:bg-blue-700'>
                     Follow
                 </button>
-            </div>
+            </div> */}
         </section>
     )
 }

@@ -2,3 +2,11 @@
     content: "";
     @apply w-full h-1 block bg-primary-bg
 }
+
+.input {
+    @apply p-2 w-full text-xl border-2 border-[#ccd0d5] rounded-sm outline-0 focus:border-[#0866ff]
+}
+
+.btn {
+    @apply p-3 w-full text-xl text-white rounded-xl cursor-pointer transition-all
+}
