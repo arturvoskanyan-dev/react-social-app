@@ -23,16 +23,16 @@ export default function UserProfile() {
     return (
         <section className="p-30 flex items-center justify-between">
             <div className='flex items-center gap-4 relative'>
-                <img src={user?.photos?.large || userImage} className="rounded-full" />
+                <img src={user?.photos?.large || userImage} className="w-[250px] rounded-full" />
                 <div className='flex flex-col gap-4'>
                     <h2 className='text-xl font-bold'>{user?.fullName}</h2>
-                    <div className='absolute bottom-20'>
+                    <div className='absolute bottom-16'>
                         <ProfileAbout user={user} />
                     </div>
                     {
                         localStorage.getItem("userId") === id
                         && <label className="absolute right-28 bottom-10" >
-                            <MdPhotoCamera className='p-3 text-6xl bg-gray-300 rounded-full cursor-pointer' />
+                            <MdPhotoCamera className='p-2 text-5xl bg-gray-300 rounded-full cursor-pointer' />
                             <input type="file" hidden onChange={changeProfile} />
                         </label>
                     }

@@ -1,10 +1,12 @@
-import { Field, Formik, Form } from 'formik'
+import { Field, Formik, Form, ErrorMessage } from 'formik'
 import React from 'react'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { setLoginThunk } from '../../store/action/authAction';
 import { NavLink } from 'react-router-dom';
+import validation from '../validation';
 
 export default function LoginPage() {
+    const { messages } = useSelector((state) => state.auth);
     const dispatch = useDispatch();
 
     const login = ({ email, password }, resetForm) => {
@@ -25,21 +27,25 @@ export default function LoginPage() {
                             email: "",
                             password: ""
                         }}
-                        onSubmit={(value, {resetForm}) => login(value, resetForm)}
+                        onSubmit={(value, { resetForm }) => login(value, resetForm)}
+                        validationSchema={validation}
                     >
                         <Form>
                             <div className='flex flex-wrap gap-4'>
+                                <span className='text-red-600 text-lg'>{messages?.[0]}</span>
                                 <Field
                                     name="email"
                                     placeholder="email"
                                     className='input'
                                 />
+                                <span className='text-red-600 text-lg'><ErrorMessage name='email' /></span>
                                 <Field
                                     name="password"
                                     type="password"
                                     placeholder="password"
                                     className='input'
                                 />
+                                <span className='text-red-600 text-lg'><ErrorMessage name='password' /></span>
                             </div>
                             <div className='m-4 flex flex-wrap justify-center gap-4'>
                                 <button type='submit' className='btn w-primary-size bg-primary-blue'>Login</button>

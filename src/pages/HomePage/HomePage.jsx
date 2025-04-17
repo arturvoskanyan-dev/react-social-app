@@ -8,7 +8,7 @@ export default function HomePage() {
     const [redirect, setRedirect] = useState(null);
 
     useEffect(() => {
-        if (userId) {
+        if (userId?.userId) {
             localStorage.setItem("userId", userId?.userId);
             setRedirect(userId);
         } 

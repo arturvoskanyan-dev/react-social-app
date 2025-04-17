@@ -1,7 +1,8 @@
 import { LOG_OUT, SET_LOGIN,  } from "../action/authAction";
 
 const initState = {
-    userId: null
+    userId: null,
+    messages: []
 }
 
 const authReducer = (state = initState, action) => {
@@ -9,7 +10,8 @@ const authReducer = (state = initState, action) => {
         case SET_LOGIN:
             return {
                 ...state,
-                userId: action.payload
+                userId: action.payload.data,
+                messages: action.payload.messages
             }
         case LOG_OUT:
             return {
