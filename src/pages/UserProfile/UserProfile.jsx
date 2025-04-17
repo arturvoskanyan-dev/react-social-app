@@ -4,8 +4,7 @@ import { userThunk } from '../../store/action/userAction';
 import { useDispatch, useSelector } from 'react-redux';
 import userImage from "../../assets/user.png"
 import { SocialAPI } from '../../api/api';
-import ProfileAbout from '../../components/ProfileAbout/ProfileAbout';
-import { MdPhotoCamera } from "react-icons/md";
+import { ChangeProfile, MdPhotoCamera, ProfileAbout } from "../index"
 
 export default function UserProfile() {
     let { id } = useParams();
@@ -27,17 +26,19 @@ export default function UserProfile() {
                 <img src={user?.photos?.large || userImage} className="rounded-full" />
                 <div className='flex flex-col gap-4'>
                     <h2 className='text-xl font-bold'>{user?.fullName}</h2>
+                    <div className='absolute bottom-20'>
+                        <ProfileAbout user={user} />
+                    </div>
                     {
                         localStorage.getItem("userId") === id
-                        && <label className="absolute right-28 bottom-10">
+                        && <label className="absolute right-28 bottom-10" >
                             <MdPhotoCamera className='p-3 text-6xl bg-gray-300 rounded-full cursor-pointer' />
-                            <input type="file" hidden />
+                            <input type="file" hidden onChange={changeProfile} />
                         </label>
-
                     }
                 </div>
             </div>
-            {localStorage.getItem("userId") === id && <ProfileAbout user={user} />}
+            {localStorage.getItem("userId") === id && <ChangeProfile user={user} />}
         </section>
     )
 }

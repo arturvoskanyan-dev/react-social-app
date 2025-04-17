@@ -10,3 +10,7 @@
 .btn {
     @apply p-3 w-full text-xl text-white rounded-xl cursor-pointer transition-all
 }
+
+.social_icons:hover {
+    @apply text-primary-blue scale-120 -translate-y-2
+}

@@ -10,13 +10,15 @@ export default function SearchUserID() {
     let navigate = useNavigate();
 
     const handleSubmit = () => {
-        navigate(`/user/${searchUserId}`)
-        dispatch(userThunk(searchUserId))
-        setSearchUserId("")
+        if (searchUserId) {
+            navigate(`/user/${searchUserId}`)
+            dispatch(userThunk(searchUserId))
+            setSearchUserId("")
+        }
     }
 
     return (
-        <form className='relative flex items-center' onSubmit={(e) => {e.preventDefault(); handleSubmit();}}>
+        <form className='relative flex items-center' onSubmit={(e) => { e.preventDefault(); handleSubmit(); }}>
             <input
                 type="number"
                 value={searchUserId}
