@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import userImage from "../../assets/user.png"
 import { SocialAPI } from '../../api/api';
 import ProfileAbout from '../../components/ProfileAbout/ProfileAbout';
+import { MdPhotoCamera } from "react-icons/md";
 
 export default function UserProfile() {
     let { id } = useParams();
@@ -22,18 +23,17 @@ export default function UserProfile() {
 
     return (
         <section className="p-30 flex items-center justify-between">
-            <div className='flex items-center gap-4'>
+            <div className='flex items-center gap-4 relative'>
                 <img src={user?.photos?.large || userImage} className="rounded-full" />
                 <div className='flex flex-col gap-4'>
                     <h2 className='text-xl font-bold'>{user?.fullName}</h2>
                     {
                         localStorage.getItem("userId") === id
-                        && <input
-                            type="file"
-                            onChange={changeProfile}
-                            placeholder=''
-                            className='p-2 font-bold bg-gray-300'
-                        />
+                        && <label className="absolute right-28 bottom-10">
+                            <MdPhotoCamera className='p-3 text-6xl bg-gray-300 rounded-full cursor-pointer' />
+                            <input type="file" hidden />
+                        </label>
+
                     }
                 </div>
             </div>

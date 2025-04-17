@@ -13,7 +13,7 @@ export default function LoginPage() {
     }
 
     return (
-        <section className='py-30 fixed top-0 left-0 right-0 bottom-0 z- bg-white'>
+        <section className='py-30 fixed top-0 left-0 right-0 bottom-0 z-50 bg-white'>
             <section className='flex justify-evenly items-center max-xl:flex-col max-xl:text-center'>
                 <section className='max-w-xl'>
                     <h1 className='text-primary-blue text-logo-size font-bold'>Facebook</h1>

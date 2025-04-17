@@ -23,7 +23,7 @@ export default function ProfileAbout({ user }) {
                     onClick={() => setPopUp(!popUp)}
                     className='w-[250px] p-2 bg-primary-bg text-white rounded-2xl cursor-pointer'
                 >
-                    Edit your profile
+                    Edit profile
                 </button>
             </div>
             <NavLink to="/" className='relative flex items-center text-xl'>
@@ -32,9 +32,9 @@ export default function ProfileAbout({ user }) {
             </NavLink>
             {
                 popUp
-                && <div className="fixed inset-0 z-10" onClick={() => setPopUp(false)}>
+                && <div className="fixed inset-0 z-50" onClick={() => setPopUp(false)}>
                     <div
-                        className="w-4xl max-h-[600px] overflow-y-scroll absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white p-12 rounded shadow-lg z-20"
+                        className="w-4xl max-h-[600px] overflow-y-scroll absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white p-8 rounded shadow-lg z-20"
                         onClick={(e) => e.stopPropagation()}>
                         <div className='flex flex-col gap-4'>
                             <h2 className='text-2xl text-center font-medium'>Edit Your Profile</h2>
