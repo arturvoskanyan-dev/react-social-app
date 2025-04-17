@@ -21,7 +21,7 @@ export default function UserProfile() {
     }, [])
 
     return (
-        <section className='p-30 flex items-center justify-between'>
+        <section className="p-30 flex items-center justify-between">
             <div className='flex items-center gap-4'>
                 <img src={user?.photos?.large || userImage} className="rounded-full" />
                 <div className='flex flex-col gap-4'>

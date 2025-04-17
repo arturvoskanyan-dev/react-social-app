@@ -49,7 +49,7 @@ export default function ProfileEditForm({ profile, setPopUp }) {
                         )
                     })
                 }
-                <button type="submit" className='btn bg-primary-blue'>Save</button>
+                <button type="submit" className='btn !w-[150px] font-medium bg-primary-blue m-auto'>Save</button>
             </Form>
         </Formik>
     )

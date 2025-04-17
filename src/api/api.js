@@ -29,5 +29,9 @@ export const SocialAPI = {
 
     editProfile(url) {
         return instance.put(`/profile`, url)
+    },
+
+    logOut() {
+        return instance.delete("/auth/login")
     }
 }
