@@ -33,5 +33,13 @@ export const SocialAPI = {
 
     logOut() {
         return instance.delete("/auth/login")
+    },
+
+    getStatus(userId) {
+        return instance.get(`/profile/status/${userId}`)
+    },
+
+    changeStatus(newStatus) {
+        return instance.put(`/profile/status`, {status: newStatus})
     }
 }

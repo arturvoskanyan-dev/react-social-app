@@ -10,6 +10,7 @@ import ChangeProfile from "../components/ChangeProfile/ChangeProfile";
 /* Icons */
 
 import { MdPhotoCamera } from "react-icons/md";
+import { MdEdit } from "react-icons/md";
 
 export {UsersPage, UserCard, Pagination, UserProfile, LoginPage, HomePage, ProfileAbout, ChangeProfile}
-export {MdPhotoCamera}
+export {MdPhotoCamera, MdEdit}
