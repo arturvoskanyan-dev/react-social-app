@@ -41,5 +41,9 @@ export const SocialAPI = {
 
     changeStatus(newStatus) {
         return instance.put(`/profile/status`, {status: newStatus})
+    },
+    
+    searchUser(userName) {
+        return instance.get(`/users?term=${userName}`)
     }
 }

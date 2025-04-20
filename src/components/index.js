@@ -1,6 +1,6 @@
 /* Components */
 
-import SearchUserID from "./SearchUserID/SearchUserID";
+import SearchUser from "./SearchUser/SearchUser";
 import HeaderIcons from "./HeaderIcons/HeaderIcons";
 import ProfileEditForm from "./ProfileEditForm/ProfileEditForm";
 
@@ -21,6 +21,6 @@ import { FaTwitter } from "react-icons/fa";
 import { FaYoutube } from "react-icons/fa";
 import { IoIosCloseCircleOutline } from "react-icons/io";
 
-export {SearchUserID, HeaderIcons, ProfileEditForm}
+export {SearchUser, HeaderIcons, ProfileEditForm}
 export {GrNext, GrPrevious, GrHomeRounded, LuUsers, GoSearch, 
     FaRegEdit, GrLogout, FaFacebook, FaGithub, FaSquareInstagram, FaVk, FaTwitter, FaYoutube, IoIosCloseCircleOutline}
