@@ -15,6 +15,7 @@ export default function SearchBox() {
                     users?.items?.map((user) => {
                         return (
                             <NavLink
+                                key={user.id}
                                 to={`/user/${user.id}`}
                                 onClick={() => dispatch(searchTextAC(""))}
                                 className='flex items-center gap-4 hover:bg-gray-200 rounded-2xl'

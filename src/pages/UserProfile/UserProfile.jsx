@@ -6,6 +6,7 @@ import userImage from "../../assets/user.png"
 import { SocialAPI } from '../../api/api';
 import { ChangeProfile, MdPhotoCamera, ProfileAbout } from "../index"
 import UserStatus from '../../components/UserStatus/UserStatus';
+import FollowButton from '../../components/FollowButton/FollowButton';
 
 export default function UserProfile() {
     const { user, userStatus } = useSelector((state) => state.userPage);
@@ -42,7 +43,7 @@ export default function UserProfile() {
                         }
                     </div>
                 </div>
-                {localStorage.getItem("userId") === id && <ChangeProfile user={user} />}
+                {localStorage.getItem("userId") === id ? <ChangeProfile user={user} /> : <FollowButton id={id} /> }
             </section>
             <UserStatus user={user} userStatus={userStatus} id={id} />
         </section>

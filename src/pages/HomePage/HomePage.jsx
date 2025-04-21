@@ -1,21 +1,19 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import { useSelector } from 'react-redux'
 import { Navigate } from 'react-router-dom';
 import LoginPage from '../LoginPage/LoginPage';
 
 export default function HomePage() {
     const { userId } = useSelector((state) => state.auth);
-    const [redirect, setRedirect] = useState(null);
 
     useEffect(() => {
         if (userId?.userId) {
             localStorage.setItem("userId", userId?.userId);
-            setRedirect(userId);
         } 
-    }, [userId]);
+    }, [userId?.userId]);
 
-    if (redirect) {
-        return <Navigate to={`/user/${redirect.userId}`} />;
+    if (localStorage.getItem("userId")) {
+        return <Navigate to={`/user/${localStorage.getItem("userId")}`} />;
     }
 
     return (

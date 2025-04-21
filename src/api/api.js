@@ -45,5 +45,13 @@ export const SocialAPI = {
     
     searchUser(userName) {
         return instance.get(`/users?term=${userName}`)
+    },
+
+    getFollow(userId) {
+        return instance.get(`/follow/${userId}`)
+    },
+
+    setFollow(userId) {
+        return instance.post(`/follow/${userId}`)
     }
 }
