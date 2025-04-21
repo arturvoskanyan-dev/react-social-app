@@ -1,7 +1,6 @@
 import React from 'react'
-import userImage from "../../assets/user.png"
 import { NavLink } from 'react-router-dom'
-import FollowButton from '../FollowButton/FollowButton'
+import {FollowButton, userImage} from "../index"
 
 export default function UserCard({ user }) {
   return (

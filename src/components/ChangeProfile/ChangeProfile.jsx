@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { FaRegEdit, GrLogout, ProfileEditForm, IoIosCloseCircleOutline } from '../index';
+import { FaRegEdit, GrLogout, PopUp } from '../index';
 import { SocialAPI } from '../../api/api';
 import { logOutAC } from '../../store/action/authAction';
 import { useDispatch } from 'react-redux';
@@ -30,28 +30,7 @@ export default function ChangeProfile({ user }) {
                 <GrLogout className='absolute left-3 text-white' />
                 <button onClick={logout} className='w-[250px] bg-red-500 text-white p-2 rounded-xl cursor-pointer'>Log Out</button>
             </NavLink>
-            {
-                popUp
-                && <div className="fixed inset-0 z-50" onClick={() => setPopUp(false)}>
-                    <div
-                        className="w-4xl max-h-[600px] overflow-y-scroll absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white p-8 rounded shadow-lg z-20"
-                        onClick={(e) => e.stopPropagation()}>
-                        <div className='flex flex-col gap-4'>
-                            <div className='flex justify-between items-center'>
-                                <h2 className='text-2xl text-center font-medium flex-1/2'>Edit Your Profile</h2>
-                                <IoIosCloseCircleOutline
-                                    onClick={() => setPopUp(false)}
-                                    className='p-2 text-5xl bg-gray-300 text-gray-600 cursor-pointer rounded-full'
-                                />
-                            </div>
-                            <div className='border-b-2 border-gray-500'></div>
-                            <div className='flex justify-between gap-4'>
-                                <ProfileEditForm profile={user} setPopUp={setPopUp} />
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            }
+            {popUp && <PopUp user={user} setPopUp={setPopUp} />}
         </section>
     )
 }

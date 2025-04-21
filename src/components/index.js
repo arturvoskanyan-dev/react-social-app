@@ -3,6 +3,8 @@
 import SearchUser from "./SearchUser/SearchUser";
 import HeaderIcons from "./HeaderIcons/HeaderIcons";
 import ProfileEditForm from "./ProfileEditForm/ProfileEditForm";
+import { FollowButton } from "../pages";
+import PopUp from "./PopUp/PopUp";
 
 /* Icons */
 
@@ -20,7 +22,12 @@ import { FaVk } from "react-icons/fa6";
 import { FaTwitter } from "react-icons/fa";
 import { FaYoutube } from "react-icons/fa";
 import { IoIosCloseCircleOutline } from "react-icons/io";
+import userImage from "../assets/user.png"
+import { MdEdit } from "react-icons/md";
+import { FaSquareCheck } from "react-icons/fa6";
 
-export {SearchUser, HeaderIcons, ProfileEditForm}
+export {SearchUser, HeaderIcons, ProfileEditForm, FollowButton, PopUp}
 export {GrNext, GrPrevious, GrHomeRounded, LuUsers, GoSearch, 
-    FaRegEdit, GrLogout, FaFacebook, FaGithub, FaSquareInstagram, FaVk, FaTwitter, FaYoutube, IoIosCloseCircleOutline}
+    FaRegEdit, GrLogout, FaFacebook, FaGithub, FaSquareInstagram, 
+    FaVk, FaTwitter, FaYoutube, IoIosCloseCircleOutline, userImage, 
+    MdEdit, FaSquareCheck}

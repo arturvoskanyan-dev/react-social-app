@@ -4,7 +4,7 @@ const validation = YUP.object().shape({
     fullName : YUP
         .string()
         .min(5, "The minimum number of characters must be 5.")
-        .max(15, "The maximum number of characters must be 5.")
+        .max(15, "The maximum number of characters must be 15.")
         .required("Field is required !"),
     lookingForAJob : YUP
         .boolean()

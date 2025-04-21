@@ -1,7 +1,6 @@
 import React from 'react'
 import logo from "../../assets/logo.png"
-import { SearchUser, HeaderIcons } from "../index"
-import user from "../../assets/user.png"
+import { SearchUser, HeaderIcons, userImage } from "../index"
 
 export default function Header() {
     return (
@@ -13,7 +12,7 @@ export default function Header() {
                 </div>
                 <HeaderIcons />
                 <div className="flex items-center gap-4">
-                    <img src={user} className='w-12 h-12 rounded-full object-cover' />
+                    <img src={userImage} className='w-12 h-12 rounded-full object-cover' />
                 </div>
             </div>
         </header>
